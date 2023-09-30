@@ -16,3 +16,8 @@ Este respositorio nos sirve para aprender el flujo de trabajo git y gituhb.
 * git remote rmeove origin
 * git push
 * git pull
+* git checkout ejemplo
+* git chekout -b ejemplo
+* git switch -c ejemplo2
+* git switch ejemplo2
+* git merge ejemplo2
