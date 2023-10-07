@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reto: Formulario de registro</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">   
+</head>
+<body>
+    <main>
+        <h1>Formulario de registro</h1>
+        <form>
+            <label>
+                Nombres
+                <input type="text" name="nombre" minlength="3" maxlength="15" required>
+            </label>        
+
+            <label>
+                Apellidos
+                <input type="text" name="nombre" minlength="3" maxlength="15" required>
+            </label> 
+            
+            <label>
+                Email
+                <input type="email" name="email" required>
+            </label>
+
+            <label>
+                Teléfono
+                <input type="tel" name="telefono" required placeholder="+51 999999999" pattern="\+[0-9]{2} [0-9]{9}"> <!--pattern:respeta un patrón los dos primero digitos deben ser del 0 al 9 y los 9 dígitos deben ser del 0 al 9-->
+                <p>+51 999999999</p>
+            </label>
+            
+            <label>
+                Contraseña
+                <input type="password" placeholder="Password" required>
+            </label>
+
+            <label>
+                Confirmar contraseña
+                <input type="password" placeholder="Password" required>
+            </label>
+
+
+            <input type="submit" value="Guardar">
+        </form>
+    </main>
+</body>
+</html>
