@@ -4,36 +4,57 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="./style.css">  
 </head>
 <body>
+  <main>
 
   <!-- Sign-up form start -->
+    <section class="content">
+      <h1>Stay updated!</h1>
 
-  Stay updated!
+      <p>Join 60,000+ product managers receiving monthly updates on:</p>
 
-  Join 60,000+ product managers receiving monthly updates on:
+      <ul> <!--Etiqueta de listas-->
+        <li>Product discovery and building what matters</li>
+        <li>Measuring to ensure updates are a success</li>
+        <li>And much more!</li>
+    </ul>
+      
+      <div>
+        <strong id="titulo_email">
+          Email address
+        </strong>
+      </div>
+    
+      
+      <div>
+        <label>
+              <input type="email" id="email" placeholder="email@company.com" name="email" required>
+        </label>
+      </div>  
 
-  Product discovery and building what matters
-  Measuring to ensure updates are a success
-  And much more!
+      <div>
+        <input type="submit" id="submit" value="Subscribe to monthly newsletter">
+    </div>
+    </section>
 
-  Email address
-  email@company.com
-
-  Subscribe to monthly newsletter
+    <section class="photo">
+      <!--<img src="./images/image-product-desktop.jpg" width="350">-->
+    </section> 
 
   <!-- Sign-up form end -->
 
   <!-- Success message start -->
-
+<!-- 
   Thanks for subscribing!
 
   A confirmation email has been sent to ash@loremcompany.com. 
   Please open it and click the button inside to confirm your subscription.
 
   Dismiss message
-
+-->
   <!-- Success message end -->
-  
+  </main>
 </body>
 </html>
