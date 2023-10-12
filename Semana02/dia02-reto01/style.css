@@ -65,9 +65,9 @@ main{
 }
 
 .content p{ /*Aplicar estilo solo al p de la clase content*/
-    color: hsl(228, 12%, 48%)
+    color: hsl(228, 12%, 48%);
     font-weight: 500;
-    line-height: 1.5; /*Interlineado*/ 
+    line-height: 1.5px; /*Interlineado*/ 
 }
 
 .content div{/*alinea los elementos dentro de div que son span y s*/
