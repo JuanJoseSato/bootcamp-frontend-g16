@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <title>Día 01 - Modelos de caja</title>
+  <link rel="stylesheet" href="./index.css">
+
+</head>
+<body>
+  <header class="header wrapper">
+    <img src="./images/logo.svg">
+
+    <nav>
+      <ul class="header__nav">
+        <li>
+          <a href="#">Features</a>
+        </li>
+        <li>
+          <a href="#">Team</a>
+        </li>
+        <li>
+          <a href="#">Sign In</a>
+        </li>
+      </ul>
+    </nav>
+
+  </header>
+
+  <main> <!--Etiqueta semántica main para indicar que este es el contenido principal-->
+      <section class="hero">
+        <img class="hero__image" src="./images/illustration-intro.png">
+        <h2 class="hero__title">All your files in one secure location, accessible anywhere.</h2>
+  
+        <p class="hero__text">Fylo stores all your most important files in one secure location. Access them wherever 
+          you need, share and collaborate with friends family, and co-workers.</p>
+      
+        <button class="hero__button">Get Started</button>
+      </section>
+
+      <section class="features">
+        <article class="feature">
+          <img class="feature__image" src="./images/icon-access-anywhere.svg">
+
+          <h3 class="feature__title">Access your files, anywhere</h3>
+  
+          <p class="feature__text">The ability to use a smartphone, tablet, or computer to access your account means your 
+            files follow you everywhere.</p>
+        </article>
+
+        <article class="feature">
+          <img class="feature__image" src="./images/icon-security.svg">
+
+          <h3 class="feature__title">Security you can trust</h3>
+  
+          <p class="feature__text">2-factor authentication and user-controlled encryption are just a couple of the security 
+            features we allow to help secure your files.</p>
+        </article>        
+
+        <article class="feature">
+          <img class="feature__image" src="./images/icon-collaboration.svg">
+
+          <h3 class="feature__title">Real-time collaboration</h3>
+  
+          <p class="feature__text">Securely share files and folders with friends, family and colleagues for live collaboration. 
+            No email attachments required.</p>
+        </article>         
+      
+        <article class="feature">
+          <img class="feature__image" src="./images/icon-any-file.svg">
+
+          <h3 class="feature__title">Store any type of file</h3>
+  
+          <p class="feature__text">Whether you're sharing holidays photos or work documents, Fylo has you covered allowing for all 
+            file types to be securely stored and shared.</p>
+        </article>         
+                
+                 
+      </section>
+  
+      <section class="collaboration">
+        <img src="./images/illustration-stay-productive.png">
+
+        <div class="how_works">
+          <h3 class="how_works__title">Stay productive, wherever you are</h3>
+  
+          <p class="how_works__text">Never let location be an issue when accessing your files. Fylo has you covered for all of your file 
+            storage needs.</p>
+
+          <p class="how_works__text">Securely share files and folders with friends, family and colleagues for live collaboration. No email 
+            attachments required.</p>
+        
+      
+          <a href="#" class="how_works__button">See how Fylo works
+            <img src="./images/icon-arrow.svg">
+
+          </a> <!--Etiqueta "a" para enlaces-->
+        </div>
+      </section>
+      
+      <section class="testimonials">
+
+        <article class="testimonial">
+          <p class="testimonial__text">
+            Fylo has improved our team productivity by an order of magnitude. Since making the switch our team has 
+            become a well-oiled collaboration machine.
+          </p>
+
+          <div class="testimonial__profile">
+            <img src="./images/profile-1.jpg" width="30" height="30"> 
+            <div>
+              <h4>Satish Patel</h4>
+              <h5>Founder & CEO, Huddle</h5>
+            </div>
+          </div>
+        </article>
+
+        <article class="testimonial">
+          <p class="testimonial__text">
+            Fylo has improved our team productivity by an order of magnitude. Since making the switch our team has 
+            become a well-oiled collaboration machine.
+          </p>
+
+          <div class="testimonial__profile">
+            <img src="./images/profile-2.jpg" width="30" height="30"> 
+            <div>
+              <h4>Bruce McKenzie</h4>
+              <h5>Founder & CEO, Huddle</h5>
+            </div>  
+          </div>
+        </article>
+
+        <article class="testimonial">
+          <p class="testimonial__text">
+            Fylo has improved our team productivity by an order of magnitude. Since making the switch our team has 
+            become a well-oiled collaboration machine.
+          </p>
+
+          <div class="testimonial__profile">
+            <img src="./images/profile-3.jpg" width="30" height="30"> 
+            <div>
+              <h4>Iva Boyd</h4>
+              <h5>Founder & CEO, Huddle</h5>
+            </div>
+          </div>
+        </article>
+      
+
+      </section> 
+
+  </main>
+
+  <footer class="footer">
+    <section class="early-access">
+      <h2>Get early access today</h2>
+  
+      <p>
+        It only takes a minute to sign up and our free starter tier is extremely generous. If you have any 
+        questions, our support team would be happy to help you.
+      </p>
+  
+      <form> <!--Formulario-->
+        <input type="text" placeholder="email@example.com"> <!--Cuadro para ingresar texto-->
+        <input type="submit" value="Get Started For Free"> <!--Boton para submit-->
+      </form>
+    </section>
+
+    <div class="footer--wrapper">
+      <img src="./images/logo.svg">
+      <div class="footer-info">
+        <div class="footer-info__description">
+          <img src="./images/icon-location.svg">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
+          dolore magna aliqua
+        </div>
+
+
+        <div class="footer-info__contact">
+          <span>
+            <img src="./images/icon-phone.svg">
+            +1-543-123-4567
+          </span>
+
+          <span>
+            <img src="./images/icon-email.svg">
+            example@fylo.com
+          </span>
+
+        </div> 
+
+        <div class="footer-info__links">
+          <a href="#">About Us</a>
+          <a href="#">Jobs</a>
+          <a href="#">Press</a>
+          <a href="#">Blog</a>
+        </div> 
+
+        <div class="footer-info__links">
+          <a href="#">Contact Us</a>
+          <a href="#">Terms</a>
+          <a href="#">Privacy</a>
+        </div>
+
+        <!--Iconos de facebook twitter instagram buscados en la pagina https://tabler-icons.io/ seleccionar icono y darle copy SVG-->
+        <div class="footer-info__social">
+          <a href="#"> 
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3"></path>
+           </svg>
+          </a>
+          <a href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
+              <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>
+           </svg>
+          </a>
+          <a href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-instagram" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"></path>
+              <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+              <path d="M16.5 7.5l0 .01"></path>
+           </svg>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </footer>
+</body>
+</html>
