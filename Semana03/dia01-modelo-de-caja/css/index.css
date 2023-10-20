@@ -4,36 +4,25 @@
 font-family: 'Open Sans', sans-serif;
 font-family: 'Raleway', sans-serif;
 */
+@import './modules/variables.css';
+@import './modules/resets.css';
+@import './modules/general.css';
+@import './modules/utils.css';
+@import './modules/header.css';
+@import './modules/hero.css';
+@import './modules/features.css';
+@import './modules/collaboration.css';
 
-:root{ /*Seudoclase root donde vamos a definir las variables que vamos a usar*/
-    /* FONTS */
-    --color: yellow;    
-    --font-primary: 'Raleway', sans-serif; /*Definimos la variable --font-primary*/
-    --font-secondary: 'Open Sans', sans-serif;
-    --font-size: 14px;
-    --font-weight-regular: 400;
-    --font-weight-bold: 700;
-    
-    /* COLORS */
-    
-    --primary-dark-blue-intro: hsl(217, 28%, 15%);
-    --primary-dark-blue-main: hsl(218, 28%, 13%);
-    --primary-dark-blue-footer: hsl(216, 53%, 9%);
-    --primary-dark-blue-tertimonials: hsl(219, 30%, 18%);
-
-    --accent-cyan: hsl(176, 68%, 64%);
-    --accent-blue: hsl(198, 60%, 50%);
-    --accent-light-red: hsl(0, 100%, 63%);
-
-    --neutral-white: hsl(0, 0%, 100%);
-    
-}
 
 /* RESETS */ /*Propiedades que hay que aplicar para evitar tener problemas con diferentes navegadores*/
 * { /*Selector universal, le aplica a todo lo que está en la página*/
-   box-sizing: border-box; /*Hace que en el ancho definido ya esté incluido el margin, border y padding*/
-   margin: 0; /*Le quita el margen definido que los elementos (como el h1) tienen por defecto*/
-}
+    box-sizing: border-box; /*Hace que en el ancho definido ya esté incluido el margin, border y padding*/
+    margin: 0; /*Le quita el margen definido que los elementos (como el h1) tienen por defecto*/
+ 
+    /* border: 1px solid red; */ /*Agregar borde a todo para ver*/
+ 
+ }
+
 
 html {
     font-size: var(--font-size);
@@ -43,6 +32,8 @@ html {
 body{
     background-color: var(--primary-dark-blue-intro); /*Llamamos a la variable --color con var()*/
     color: var(--neutral-white);
+
+    position: relative; /*Para el body sea el elemento padre el elemento .top que tiene position:absolut lo pueda tomar como referencia*/
 }
 
 a{
@@ -51,12 +42,22 @@ a{
     text-decoration: none;
 }
 
+a:hover { /*Cuando pongamos el puntero sobre el enlace "a", se le va a dar los siguientes efectos*/
+    /*color: red;*/
+    font-weight: var(--font-weight-bold); /*Negrita*/
+    text-decoration: underline; /*Subrayado*/
+}
+
+
 img {
     /* TODO: RWD para imágenes */
      /*Adaptar el ancho y alto del contenedor o en celulares*/
     max-width: 100%;
     height: auto;
 }
+
+
+
 
 .wrapper {
     /*width: 1440px;*/
@@ -74,6 +75,17 @@ img {
     justify-content: space-between; /*Hace que Features Team y Sign in se muevan al extremo derecho de la caja*/
     margin-top: 3rem; /*rem es el tamaño en pixel del font size html (en este caso 1rem=14px) y se puede poner 1rem, 2rem, etc*/
 
+}
+
+.header__logo {
+    width: 176px;
+}
+
+/*Para dispositivos menores a 768px, Hace que los tres elementos (Features Team Sign In) se vayan hacia abajo*/
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+    }
 }
 
 .header__nav{
@@ -107,6 +119,13 @@ img {
 
 
 }
+
+@media (max-width: 768px) {/*Adapta la imagen de la onda para dispositivos pequeños*/
+    .hero {
+        background-image: url(./images/bg-curvy-mobile.svg);
+    }
+}
+
 
 .hero__title {
     /* width: 720px; */
@@ -159,6 +178,22 @@ img {
         var(--accent-cyan) 0%,
         var(--accent-blue) 35%
     )
+    ;
+    transition: all 1s ease; /*Transición suave al cambiar de color cuando se pase el puntero*/
+}
+
+.hero__button:hover { /*Cuando coloco el puntero encima del Botón hero*/
+    /*background: none;*/ /*Resetear backgrpund con degradado para que se anule*/
+    /*background-color: var(--accent-cyan);*/ /*Cambia color del boton*/
+    background:
+    linear-gradient(
+        90deg,
+        var(--accent-cyan) 35%,
+        var(--accent-blue) 100%
+    )
+    ;
+ 
+    cursor: pointer; /*Cambia el diseño del cursor*/
 }
 
 .features {
@@ -171,8 +206,8 @@ img {
     background-color: var(--primary-dark-blue-main);
 }
 
-@media (max-width: 768px) { /* SE APLICA A DISPOSITIVOS COMO TABLETS Y CELULARES (Siempre se ven las dos columnas completas)*/
-    .featurest {
+@media (max-width: 768px) { /* SE APLICA A DISPOSITIVOS COMO TABLETS Y CELULARES (Siempre se ven las columnas completas)*/
+    .features {
         grid-template-columns: 340px;
     }
 }
@@ -220,8 +255,9 @@ img {
     display:flex;
     flex-direction: column; /*Alinear de forma vertical*/
     gap: 1rem; /*Separación entre las líneas/bloques internas*/
-    width: 30rem; /*Ponemos un ancho fijo*/
+    width: min(100% - 3rem, 30rem);
 }
+
 
 .how_works__title { /*Titulo de Collaboration*/
     font-family: var(--font-primary);
@@ -247,7 +283,23 @@ img {
 
     padding-bottom: 0.5rem; /*Al colocar padding, separa el texto del borde que hemos colocado*/
 
+
 }
+
+.how_works__button:hover { /*Se aplican los siguientes efectos cuando se pase el puntero*/
+    /*Para que no se le aplique ningun estilo definido en a:hover, porque solo necesitamos que se ponga blanco:*/
+    font-weight: var(--font-weight-regular);
+    text-decoration: none;
+
+    /*Color blanco texto y línea:*/
+    color: var(--neutral-white);
+    border-bottom: 1px solid var(--neutral-white);
+}
+
+.how_works__button:hover svg circle {
+    fill: white;
+}
+
 
 .testimonials {
     display: flex;
@@ -256,27 +308,38 @@ img {
     padding-top: 8rem; /*Separación enter Collaboration y Testimonials*/
 
     padding-bottom: 18rem; /*Agregamos espaciado para poder colocar la caja de early access*/
+
+    background-color: var(--primary-dark-blue-main);
 }
 
 @media (max-width: 768px) { /* SE APLICA A DISPOSITIVOS COMO TABLETS Y CELULARES*/
     .testimonials {
         flex-direction: column;
+        align-items: center;
     }
 }
 
 .testimonial {
     background-color: var(--primary-dark-blue-tertimonials);
     padding: 2rem 1.5rem 1.5rem 1.5rem; /*top right bottom left*/ /*padding para cada blque testimnonial*/
-    font-family: var(--font-primary);    
+    font-family: var(--font-primary); 
+    
+    border-radius: 0.5rem; /*Esquinas redondeadas*/
+    border: 7px solid rgba(222, 222, 222, 0.1); /*Cuarto número es la opacidad*/
+    
+    width: min(100% - 3rem, 23rem);
+
 
 }
 
 .testimonial__text {
     margin-bottom: 2rem; /*Separación entre el texto y el progile*/
     line-height: 1.5rem; /*interlineado del texto*/
-    width: 21rem;   /*ancho de las cajas*/
+    /*width: min(100% - 3rem, 21rem);*/   /*ancho de las cajas*/
 
 }
+
+
 
 .testimonial__profile {
     display: flex;
@@ -285,7 +348,7 @@ img {
 }
 
 .testimonial__profile img { /*al elemento img de .testimonial__profile*/
-    border-radius: 58%; /*Hacer la imagen redonda, si pones un valor pequeño*/
+    border-radius: 50px; /*Hacer la imagen redonda, si pones un valor pequeño*/
 }
 
 .testimonial__profile h4 {
@@ -299,7 +362,7 @@ img {
 .early-access {
     /* border: 1px solid red; */
     font-family: var(--font-primary);
-    width: 53rem; /*reduzco el tamaño de la caja porque ocupaba todo el ancho de la página*/
+    width: min(100% - 3rem, 53rem); /*reduzco el tamaño de la caja porque ocupaba todo el ancho de la página*/
     padding: 2rem;
 
     background-color: var(--primary-dark-blue-tertimonials);
@@ -316,7 +379,7 @@ img {
     left: 50%; /*Centrao al medio de Footer*/
     transform: translate(-50%, -50%); /*Muevo el elemento a partir del centro que definí*/
 
-    
+    box-shadow: 3px 3px 10px #111; /*Sombreado de la caja*/
 
 }
 
@@ -331,13 +394,12 @@ img {
 .early-access form {
     display: flex;
     gap: 2rem;
+
+    width: 100%
+    
 }
 
 @media (max-width: 768px) { /* SE APLICA A DISPOSITIVOS COMO TABLETS Y CELULARES*/
-    .early-access {
-        width: 100%;
-    
-    }
     .early-access form {
         flex-direction: column;
     }
@@ -350,7 +412,7 @@ img {
     border-radius: 1.5rem; /*Redondea los extremos de la caja de texto*/
     border: none; /*Quitar el borde de la caja de texto*/
     padding: 1rem 2rem; /*El padding es dentro del border*/ /*Top&Bottom Right&Left*/
-    width: 30rem; /*Ancho de la caja*/
+    width: min(100%, 30rem); /*Ancho de la caja*/
 }
 
 .early-access input[type=submit] { /*solo al input tipo submit*/
@@ -372,6 +434,19 @@ img {
 
 }
 
+.early-access input[type=submit]:hover { /*Cuando coloco el puntero encima del Botón Get starder for free*/
+    /*background: none;*/ /*Resetear backgrpund con degradado para que se anule*/
+    /*background-color: var(--accent-cyan);*/ /*Cambia color del boton*/
+    background:
+    linear-gradient(
+        90deg,
+        var(--accent-cyan) 35%,
+        var(--accent-blue) 100%
+    )
+    ;
+    cursor: pointer; /*Cambia el diseño del cursor*/
+}
+
 .footer {
     font-family: var(--font-primary);
     background-color: var(--primary-dark-blue-footer);
@@ -385,8 +460,10 @@ img {
     flex-direction: column;
     align-items: flex-start; /*Para que lo elementos recuperen su tamaño inicial*/
     gap: 2rem; /*Separación entre la imagen y toda la info*/
-    width: 76rem;
+
     margin: 0 auto; /*Margen automatico a la izquierda y a la derecha*/
+
+    width: min(100% - 3rem, 76rem); /*Cuando estes es un dispositivo más pequeño usar el 100% del ancho mesno 3rem, pero en dispositvos grandes usar el ancho de 76rem*/
 
 }
 
@@ -430,3 +507,11 @@ img {
     gap: 2rem;
 }
 
+.top {
+    position:absolute;
+    bottom: 14px;
+    right: 14px;
+    background-color: #333;
+    padding: 1rem;
+
+}

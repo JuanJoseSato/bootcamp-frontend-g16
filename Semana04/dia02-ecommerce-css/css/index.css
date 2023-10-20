@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+/*
+font-family: 'Kumbh Sans', sans-serif;
+*/
+
+:root {
+    /* FONTS */
+    --font-primary:  'Kumbh Sans', sans-serif;
+    --font-size: 16px;
+    --font-weight-regular: 400;
+    --font-weight-bold: 700;
+
+    /* COLORS */
+    --primary-orange: hsl(26, 100%, 55%);
+    --primary-pale-orange: hsl(25, 100%, 94%);
+
+    --neutral-very-dark-blue: hsl(220, 13%, 13%);
+    --neutral-dark-grayish-blue: hsl(219, 9%, 45%);
+    --neutral-grayish-blue: hsl(220, 14%, 75%);
+    --neutral-light-grayish-blue: hsl(223, 64%, 98%);
+
+    --neutral-white: hsl(0, 0%, 100%);
+    --neutral-black: hsl(0, 0%, 0%);
+
+}
+
+* { /*El * es selector universal, le aplica los siguientes propiedades a todos los elementos de la página*/
+    box-sizing: border-box; /**/
+    margin: 0;
+
+    /*border: 1px solid red;*/
+}
+
+html {
+    font-size: var(--font-size);
+
+}
+
+body {
+    font-family: var(--font-primary);
+}
+
+img {
+    /* RWD para imágenes*/
+    max-width: 100%;
+    height: auto;
+}
+
+.header {
+    border: 1px solid red;
+
+    height: 4.5rem; /* 64px / 16px */
+
+    display: flex;
+    justify-content: space-between; /*Le da Espacio entre los div de header de tal manera que ocupen todo el ancho de la página?*/
+    align-items: center; /*Alinea los elementos*/
+
+    padding: 1.5rem;
+}
+
+.header__wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Necesitamos que las flechas se coloquen a los extremos de la imagen */
+.gallery {
+    position: relative; /* Imagen padre para que los elemetos absolute ya no se salgan de la imagen relative */
+
+}
+
+/* Diseño de las flechas */
+.gallery__prev,
+.gallery__next {
+    /*border: 1px solid yellow;*/
+
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--neutral-white);
+    cursor: pointer;
+
+}
+/* Necesitamos que las flechas se coloquen a los extremos de la imagen */
+.gallery__prev {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+}
+
+/* Necesitamos que las flechas se coloquen a los extremos de la imagen */
+.gallery__next {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+}
+
+.product {
+    /*border: 1px solid red;*/
+
+    padding: 1.5rem;
+
+}
+
+.product__subtitle {
+    font-size: 1rem;
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase; /* Poner tod el texto en mayúsculas */
+    color: var(--primary-orange)
+
+}
+
+.product__title {
+    margin-top: 1rem;
+    font-size: 2.1rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--neutral-very-dark-blue);
+}
+
+.product__description {
+    margin-top: 1rem;
+    line-height: 1.5; /* interlineado */
+    color: var(--neutral-dark-grayish-blue);
+}
+
+.product__price {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product__wrapper {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.product__amount {
+    font-size: 2rem;
+    font-weight: var(--font-weight-bold);
+}
+
+.product__discount {
+    background-color: var(--primary-pale-orange);
+    color: var(--primary-orange);
+    padding: .2rem .5rem;
+    border-radius: .5rem;
+
+    font-weight: var(--font-weight-bold);
+
+}
+
+.product__price-with-discount {
+    font-size: 1.1rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--neutral-dark-grayish-blue);
+
+    text-decoration: line-through; /* Tachado del texto */
+}
+
+.product__qty {
+    margin-top: 1rem;
+    width: 100%; /*Para que siempre ocupe el 100%*/
+    /* border: 1px solid red; */
+
+    display: flex;
+    justify-content: space-between;
+    align-content: stretch;
+    align-items: center; /*Alineados verticalmente*/
+
+    background-color: var(--neutral-light-grayish-blue);
+    border-radius: .5rem;
+
+}
+
+.product__qty button {
+    width: 3rem;
+    height: 3rem;
+    border: 0; /*Quito el borde del boton*/
+    background-color: var(--neutral-light-grayish-blue);
+}
+
+.product__qty span {
+    font-size: 1.2rem;
+    font-weight: var(--font-weight-bold);
+    background-color: var(--neutral-light-grayish-blue);
+}
+
+.product__add-to-cart {
+    margin-top: 2rem;
+    width: 100%; /*Para que ocupe el 100$ de su contenedor*/
+    border: none;
+    padding: 1.3rem 1rem; /*Agrando el tamaño*/
+    border-radius: .8rem; /*Redondeado del boton*/
+
+    background-color: var(--primary-orange);
+    color: var(--neutral-white);
+    font-size: 1.1rem;
+    font-weight: var(--font-weight-bold);
+
+    cursor: pointer;
+
+    box-shadow: 0px 10px 30px var(--primary-orange); /*Sombreado num1:posicion en x, num2:posicion en y, num3:blur*/
+
+    /*Agregar espaciado entre el carrito de compras y el texto Add to cart*/
+    display: flex;  /*Hace que la imagen y el texto se separen?*/
+    gap: 10px; /*Espaciado entre imagen y el texto*/
+    justify-content: center; /*Centrado*/
+}
+
+.product__add-to-cart svg path {/*Cambio el color de la línea del carrito de compras*/
+    fill: var(--neutral-white);
+}

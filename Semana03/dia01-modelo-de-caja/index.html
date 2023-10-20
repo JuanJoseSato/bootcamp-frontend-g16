@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <title>Día 01 - Modelos de caja</title>
-  <link rel="stylesheet" href="./index.css">
+  <link rel="stylesheet" href="./css/index.css">
 
 </head>
 <body>
-  <header class="header wrapper">
-    <img src="./images/logo.svg">
+  <header id="top" class="header wrapper">
+    <img class="header__logo" src="./images/logo.svg">
 
     <nav>
       <ul class="header__nav">
@@ -93,7 +93,8 @@
         
       
           <a href="#" class="how_works__button">See how Fylo works
-            <img src="./images/icon-arrow.svg">
+            <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><circle id="b" cx="6" cy="6" r="6"/><filter x="-25%" y="-25%" width="150%" height="150%" filterUnits="objectBoundingBox" id="a"><feOffset in="SourceAlpha" result="shadowOffsetOuter1"/><feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1"/><feColorMatrix values="0 0 0 0 0.384313725 0 0 0 0 0.878431373 0 0 0 0 0.850980392 0 0 0 0.811141304 0" in="shadowBlurOuter1"/></filter></defs><g fill="none" fill-rule="evenodd"><g transform="translate(2 2)"><use fill="#000" filter="url(#a)" xlink:href="#b"/><use fill="#62E0D9" xlink:href="#b"/></g><path d="M8.582 6l-.363.35 1.452 1.4H5.333v.5h4.338L8.22 9.65l.363.35 2.074-2z" fill="#1B2330"/></g></svg>
+            <!--<img src="./images/icon-arrow.svg">-->
 
           </a> <!--Etiqueta "a" para enlaces-->
         </div>
@@ -152,7 +153,7 @@
   </main>
 
   <footer class="footer">
-    <section class="early-access">
+    <section id="earlyAccess" class="early-access">
       <h2>Get early access today</h2>
   
       <p>
@@ -197,7 +198,7 @@
         </div> 
 
         <div class="footer-info__links">
-          <a href="#">Contact Us</a>
+          <a href="#earlyAccess">Contact Us</a> <!--Para que nos lleve a la sección de arriba early access-->
           <a href="#">Terms</a>
           <a href="#">Privacy</a>
         </div>
@@ -232,5 +233,6 @@
     </div>
 
   </footer>
+  <a href="#top" class="top">Ir arriba</a>
 </body>
 </html>
