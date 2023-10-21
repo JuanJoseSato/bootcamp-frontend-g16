@@ -1,0 +1,374 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+/*
+font-family: 'Kumbh Sans', sans-serif;
+
+576px  -> pantallas pequeñas (celulares)
+768px  -> pantallas pequeñas (tablets y celulares)
+992px  -> pantallas medianas (Desktop)
+1200px -> pantallas grandes (Desktops, TVs)
+*/
+
+:root {
+    /* FONTS */
+    --font-primary:  'Kumbh Sans', sans-serif;
+    --font-size: 16px;
+    --font-weight-regular: 400;
+    --font-weight-bold: 700;
+
+    /* COLORS */
+    --primary-orange: hsl(26, 100%, 55%);
+    --primary-pale-orange: hsl(25, 100%, 94%);
+
+    --neutral-very-dark-blue: hsl(220, 13%, 13%);
+    --neutral-dark-grayish-blue: hsl(219, 9%, 45%);
+    --neutral-grayish-blue: hsl(220, 14%, 75%);
+    --neutral-light-grayish-blue: hsl(223, 64%, 98%);
+
+    --neutral-white: hsl(0, 0%, 100%);
+    --neutral-black: hsl(0, 0%, 0%);
+
+}
+
+* { /*El * es selector universal, le aplica los siguientes propiedades a todos los elementos de la página*/
+    box-sizing: border-box; /**/
+    margin: 0;
+
+    /*border: 1px solid red;*/
+}
+
+html {
+    font-size: var(--font-size);
+
+}
+
+body {
+    font-family: var(--font-primary);
+}
+
+img {
+    /* RWD para imágenes*/
+    max-width: 100%;
+    height: auto;
+}
+
+/*Quitar el subrayado y el color azul por defecto de los enlaces*/
+a {
+    text-decoration: none;
+    color: inherit;
+} 
+
+.wrapper {
+    width: min(100% - 3rem, 1200px);
+    margin: 0 auto;
+  
+    /* border: 1px solid red; */
+  }
+
+.flex {
+    display: flex;
+}
+
+.header {
+    /*border: 1px solid red;*/
+
+    height: 4.5rem; /* 64px / 16px */
+
+    display: flex;
+    justify-content: space-between; /*Le da Espacio entre los div de header de tal manera que ocupen todo el ancho de la página?*/
+    align-items: center; /*Alinea los elementos*/
+
+    padding: 1.5rem;
+}
+
+.header__wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.header__links {
+   /* display: none;*/ /*Desaparece los links en versiones moviles*/
+}
+
+.header__links--menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 100%;
+    background-color: var(--neutral-white);
+    z-index: 30; /*Para que esté encima de todo*/
+
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 1.5rem 1rem;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+/*Cuando el checkbox está checkeado, aplica las propiedades solo a .header__links-menu, sino lo aplicaría a todos sus elementos hermanos. ~ es un selector*/
+input[type=checkbox]:checked ~ .header__links--menu {
+    opacity: 1;
+}
+
+.header-menu {
+    display: none; /*Desaparece el checkbox*/
+}
+
+@media (min-width: 768px) {
+    .product-detail {
+        display: flex;
+      
+        padding: 5rem 3rem;
+      
+        gap: 5rem;
+    }
+
+    .header__menu {
+        display: none; /*Desaparece la barra para desplegar menu cuando está en desktop*/
+    }
+
+    .header__links--menu {
+        all: unset; /*Resetea todas las propiedades definidas para dispositivos mobiles para luego aplicar las de desktop*/
+    }
+
+    .header__links--menu label {
+        display: none; /*Desparece la X para desktops*/
+    }
+
+
+    .header__links {
+        /*display: block;*/ /*Regresa al valor de bloque, es decir cancela el none y lo hace aparecer de nuevo para desktops*/
+
+        display: flex; /*También hace que aparezcan como display:block*/
+        align-items: center;
+        gap: 2rem;
+
+        margin-left: 3rem;
+
+        color: var(--neutral-dark-grayish-blue);
+        
+    }
+
+ }
+
+/* Necesitamos que las flechas se coloquen a los extremos de la imagen */
+.gallery {
+    position: relative; /* Imagen padre para que los elemetos absolute ya no se salgan de la imagen relative */
+
+}
+
+.gallery__image {
+    border-radius: 1rem;
+}
+
+/* Diseño de las flechas */
+.gallery__prev,
+.gallery__next {
+    /*border: 1px solid yellow;*/
+
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--neutral-white);
+    cursor: pointer;
+
+}
+/* Necesitamos que las flechas se coloquen a los extremos de la imagen */
+.gallery__prev {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+}
+
+/* Necesitamos que las flechas se coloquen a los extremos de la imagen */
+.gallery__next {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+}
+
+@media (min-width: 768px) {
+    .gallery__prev,
+    .gallery__next {
+        display: none;
+    }
+}
+
+
+/*Los thumbnails NO aparacen en mobile*/
+.gallery-product-thumbails {
+    display: none;
+
+}
+
+/*Los thumbnails solo aparacen en desktop con todas su propiedades*/
+@media (min-width: 768px) {
+    .gallery-product-thumbails{
+        display: flex;
+
+        justify-content: space-between;
+        padding-top: 1.5em;
+    }
+
+    .gallery-product-thumbails img {
+        border-radius: .5rem;
+    
+    }
+    
+    .gallery-product-thumbnails--active {
+        border: 3px solid var(--primary-orange);
+        border-radius: .5rem;
+        width: 80px;
+        height: 80px;
+    }
+    
+    .gallery-product-thumbnails--active img {
+        opacity: .5;
+        border-radius: 0;
+    }    
+
+}
+
+.product {
+    /*border: 1px solid red;*/
+
+    padding: 1.5rem;
+
+}
+
+.product__subtitle {
+    font-size: 1rem;
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase; /* Poner tod el texto en mayúsculas */
+    color: var(--primary-orange)
+
+}
+
+.product__title {
+    margin-top: 1rem;
+    font-size: 2.1rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--neutral-very-dark-blue);
+}
+
+.product__description {
+    margin-top: 1rem;
+    line-height: 1.5; /* interlineado */
+    color: var(--neutral-dark-grayish-blue);
+}
+
+.product__price {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*Para que los precios se pongan en columna en desktops*/
+@media (min-width: 768px) {
+    .product__price {
+        flex-direction: column;
+        align-items: flex-start; /*Para que se pegue al lado izquierdo*/
+    }
+}
+
+
+.product__wrapper {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.product__amount {
+    font-size: 2rem;
+    font-weight: var(--font-weight-bold);
+}
+
+.product__discount {
+    background-color: var(--primary-pale-orange);
+    color: var(--primary-orange);
+    padding: .3rem .5rem;
+    border-radius: .5rem;
+
+    font-weight: var(--font-weight-bold);
+
+}
+
+.product__price-with-discount {
+    font-size: 1.1rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--neutral-dark-grayish-blue);
+
+    text-decoration: line-through; /* Tachado del texto */
+}
+
+.product__qty {
+    margin-top: 1rem;
+    width: 100%; /*Para que siempre ocupe el 100%*/
+    /* border: 1px solid red; */
+
+    display: flex;
+    justify-content: space-between;
+    align-content: stretch;
+    align-items: center; /*Alineados verticalmente*/
+
+    background-color: var(--neutral-light-grayish-blue);
+    border-radius: .5rem;
+
+}
+
+.product__qty button {
+    width: 3rem;
+    height: 3rem;
+    border: none; /*Quito el borde del boton*/
+    background-color: var(--neutral-light-grayish-blue);
+}
+
+.product__qty span {
+    font-size: 1.2rem;
+    font-weight: var(--font-weight-bold);
+    background-color: var(--neutral-light-grayish-blue);
+}
+
+.product__add-to-cart {
+    margin-top: 2rem;
+    width: 100%; /*Para que ocupe el 100$ de su contenedor*/
+    border: none;
+    padding: 1.1rem 1rem; /*Agrando el tamaño*/
+    border-radius: .8rem; /*Redondeado del boton*/
+
+    background-color: var(--primary-orange);
+    color: var(--neutral-white);
+    font-size: 1.1rem;
+    font-weight: var(--font-weight-bold);
+
+    cursor: pointer;
+
+    box-shadow: 0px 10px 30px var(--primary-orange); /*Sombreado num1:posicion en x, num2:posicion en y, num3:blur*/
+
+    /*Agregar espaciado entre el carrito de compras y el texto Add to cart*/
+    display: flex;  /*Hace que la imagen y el texto se separen?*/
+    gap: 10px; /*Espaciado entre imagen y el texto*/
+    justify-content: center; /*Centrado*/
+}
+
+.product__add-to-cart svg path {/*Cambio el color de la línea del carrito de compras*/
+    fill: var(--neutral-white);
+}
+
+
+ /*Este media query se aplica cuando estamos en dispositivos con resolución mayor a 768px (Desktop)*/
+@media (min-width: 768px){
+    .product-actions {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    } 
+}
