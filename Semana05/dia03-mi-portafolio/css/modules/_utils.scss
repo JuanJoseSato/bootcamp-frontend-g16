@@ -1,0 +1,7 @@
+.wrapper {
+    width: min(100% - 3rem, 1220px); /* En un dispositivo grande el ancho se planta en 1220px, y en dispostivos pequeños el ancho será el 100% de la pantalla - 3rem*/
+
+    margin: 0 auto;
+
+
+}

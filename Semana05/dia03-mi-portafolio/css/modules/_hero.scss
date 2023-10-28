@@ -1,0 +1,78 @@
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem; // 40px
+    padding: 4rem; // 64px
+    color: $primary-color-white;
+
+    &--bg {
+        background-image: url(../images/bg.svg);
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-size: contain;
+    }
+
+    &__greeting {
+        
+        font-size: 2rem;
+        font-weight: $font-weight-bold;
+        text-transform: capitalize;
+
+        & span {
+            color: #FFB742;
+            text-decoration-line: underline;
+        }
+    }
+    
+    &__title {
+        
+        font-size: 3rem; // 48px
+        font-weight: $font-weight-bold;
+        text-transform: capitalize;
+        
+
+    }
+
+    &__description {
+        
+        font-size: 1.5rem;
+        font-weight: $font-weight-regular;
+
+    }
+
+    &__photo {
+        border-radius: 100%;
+    }
+}
+
+.stack {
+    display: flex;
+    gap: 1.5rem;
+
+
+    &__title {
+        margin-bottom: .5rem;
+        font-size: 1rem;
+    }
+
+    &__wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    &__box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        //LO achica y queda parte del contenedor como un marco
+        width: 6rem; 
+        height: 6rem;
+
+        background-color: $primary-color-blue2;
+        border-radius: 0.5rem; // 8px
+    }
+}

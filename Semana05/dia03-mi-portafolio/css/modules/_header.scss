@@ -1,0 +1,68 @@
+.header {
+    // border: 1px solid red;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    &__logo {
+        color: $primary-color-gold;
+        font-size: 2rem; /*2rem=32px*/
+        font-weight: $font-weight-bold;
+    }
+
+    &__menu {
+        display: flex;
+    
+        gap: 1.5rem;
+
+        text-transform: capitalize;
+
+        padding: 10px;
+        margin: 2rem;
+
+    }
+
+    &__menu a {
+        color: $primary-color-white;
+        font-size: 1.125rem;
+        font-weight: $font-weight-semibold;
+        text-transform: capitalize;
+
+    }
+
+    .header__menu--active,
+    .header__menu a:hover {
+        color: $primary-color-gold;
+        border-bottom: 2px solid $primary-color-gold;
+    }
+
+    .header__links {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+    }
+
+
+    .header__links--active {
+        border-radius: 100%; //Circulo
+        background-color: $primary-color-blue1;
+        padding: .3rem  //Circulo más grande
+
+    }
+
+}
+
+
+
+
+
+/*
+.header__logo {
+    color: $primary-color-gold;
+    font-size: 2rem; //2rem=32px
+    font-weight: $font-weight-bold;
+}
+*/

@@ -1,0 +1,64 @@
+
+// CSS: --primary-color: #FFA559;
+/*
+$primary-color: #FFA559;
+$card-bg: #FFF;
+$card-border-color: #454545;
+$card-border-radius: 6px;
+*/
+
+:root {
+    --mi-variable: rgb(186, 201, 57);
+}
+
+@import 'variables';
+@import 'mixins';
+@import 'card';
+
+
+body {
+    /* CSS: background-color: var(--primary-color) */
+    background-color: $primary-color;
+    background-color: var(--mi-variable);
+
+    //color: white;
+    text-align: center;
+}
+
+/*
+.card {
+    background-color: $card-bg;
+    border: 1px solid $card-border-color;
+    border-radius: $card-border-radius;
+    text-align: left;
+    margin-bottom: 1rem;
+
+    &__header {
+        padding: 1rem 1.5rem;
+        border-bottom: 1px solid $card-border-color;
+    }
+
+    &__body {
+        padding: 1rem 1.5rem;
+    }
+
+    &--success {
+        background-color: green;
+    }
+}
+*/
+
+// CSS 
+/*
+.card__header {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid $card-border-color;
+}
+
+.card__body {
+    padding: 1rem 1.5rem;
+}
+*/
+
+
+
