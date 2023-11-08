@@ -68,6 +68,7 @@ img {
     justify-content: space-between;
     align-items: center;
     /* margin: 3rem 3rem 3rem 3rem; */
+    padding: 5rem;
 
 
 }
@@ -85,7 +86,9 @@ img {
 }
 
 .hero {
-    border: 1px solid red;
+    /* border: 1px solid red; */
+    
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -94,17 +97,25 @@ img {
     gap: 8rem;
     padding-right: 1rem;
     padding-left: 1rem;
+    padding-bottom: 15rem;
 
-    
+    background-image: url(../images/bg-curve-desktop.svg);
+    background-repeat: no-repeat;
+    background-position: bottom; 
+    background-size: contain;
+
+
 }
 
 .hero img {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     width: 30%;
 }
 
 .get_started {
-    border: 1px solid red;
+    /* border: 1px solid red; */
+    
+    
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -115,18 +126,20 @@ img {
 .get_started__title {
     font-family: var(--font-primary);
     font-weight: var(--font-weight-bold);
+    color: var(--primary-very-dark-blue);
     font-size: 2rem;
 }
 
 .get_started__text {
     font-family: var(--font-secondary);
+    color: var(--primary-very-dark-blue);
 }
 
 .get_started form {
     display: flex;
     gap: 0.8rem;
 
-    width: 100%
+    width: 100%;
     
 }
 
@@ -154,31 +167,40 @@ img {
 }
 
 .collaboration {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     background-color: var(--neutral-light-grayish-blue);
     display: flex;
     align-items: center;
     justify-content: center;
 
-    padding-top: 8rem;
+    padding-top: 4rem;
+    padding-bottom: 6rem;
+
+    gap: 1rem;
 
 }
 
 .how_works {
+    /* border: 1px solid red; */
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    width: min(100% - 3rem, 30rem);
+    width: min(100% - 3rem, 45rem);
 }
 
 .how_works__title {
+    
     font-family: var(--font-primary);
     font-weight: var(--font-weight-bold);
     font-size: 2.5rem;
+    color: var(--primary-very-dark-blue);
+
 }
 
 .how_works__text {
     font-family: var(--font-secondary);
+    color: var(--primary-very-dark-blue);
+    width: min(100% - 3rem, 34rem);
 }
 
 
@@ -190,30 +212,37 @@ img {
     gap: 0.5rem; /*Separación entre el texto y la imagen de la flecha*/ 
 
     /*Agregamos el borde del link*/
-    border-bottom: 1px solid var(--accent-cyan); /*agrega el borde, pero ocupa toda la caja*/
+    border-bottom: 1px solid var(--accent-moderate-cyan); /*agrega el borde, pero ocupa toda la caja*/
     margin-right: auto; /*Ajusta el borde solo hasta donde llegan los elementos*/ /*Otra opción es definir el ancho con width=10.8rem*/
 
-    padding-bottom: 0.5rem; /*Al colocar padding, separa el texto del borde que hemos colocado*/
+    padding-bottom: 0.25rem; /*Al colocar padding, separa el texto del borde que hemos colocado*/
+    
 
 }
 
 .testimonial {
     background-color: white;
-    padding: 2rem 1.5rem 1.5rem 1.5rem; /*top right bottom left*/ /*padding para cada blque testimnonial*/
-    font-family: var(--font-primary); 
+    padding: 0rem 1.5rem 1.5rem 1.5rem; /*top right bottom left*/
+    font-family: var(--font-secondary); 
     
     border-radius: 0.5rem; /*Esquinas redondeadas*/
     border: 7px solid rgba(222, 222, 222, 0.1); /*Cuarto número es la opacidad*/
     
-    width: min(100% - 3rem, 23rem);
+    width: min(100% - 3rem, 25rem);
 
 
 }
 
+.testomonial__text-quote {
+    margin-bottom: 0.5rem;
+}
+
 .testimonial__text {
-    margin-bottom: 2rem; /*Separación entre el texto y el progile*/
+    margin-bottom: 1.5rem; /*Separación entre el texto y el profile*/
     line-height: 1.5rem; /*interlineado del texto*/
     /*width: min(100% - 3rem, 21rem);*/   /*ancho de las cajas*/
+    font-weight: var(--font-weight-regular);
+    color: var(--primary-very-dark-blue);
 
 }
 
@@ -229,17 +258,129 @@ img {
 
 .testimonial__profile h4 {
     font-weight: var(--font-weight-bold);
+    color: var(--primary-very-dark-blue);
 }
 
 .testimonial__profile h5 {
-    font-weight: var(--font-weight-regular)
+    font-weight: var(--font-weight-regular);
+    color: var(--primary-very-dark-blue);
 }  
 
 .collaboration__img {
-    border: 1px solid red;
-    width: 40%;
+    /* border: 1px solid red; */
+    width: 36%;
 }
 
+
+
 .early-access {
+    background-color: var(--primary-desaturated-blue);
+    font-family: var(--font-primary);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10rem;
+
+    padding: 5rem;
+
+}
+
+.early-access div {
+    width: min(100% - 3rem, 32rem); 
+}
+
+.early-access h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.early-access p {
+    font-family: var(--font-secondary);
+}
+
+.early-access form {
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+
+    gap: 1rem;
+    width: 50%;
+
+
+}
+
+.early-access input[type=text] {
+    width: min(100% - 3rem, 32rem);
+    padding: 1rem 1rem;
+    border-radius: 0.2rem;
+    border: none;
+    box-shadow: 3px 3px 2px #4f3c7ddb;
+}
+
+.early-access input[type=submit] {
+    background-color: var(--accent-bright-blue);
+    width: min(100% - 3rem, 12rem);
+    padding: 1rem 1rem;
+    border-radius: 0.2rem;
+    border: none;
+    box-shadow: 3px 3px 2px #4f3c7ddb;
+
+    color: white;
     
 }
+
+
+
+.footer {
+    /* border: 1px solid red; */
+    font-family: var(--font-secondary);
+    background-color: var(--primary-very-dark-blue);
+    color: white;
+
+    padding: 5rem 0 5rem 0;
+
+}
+
+
+.footer--wrapper {
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /*Para que lo elementos recuperen su tamaño inicial*/
+    gap: 2rem; /*Separación entre la imagen y toda la info*/
+
+    margin: 0 auto; /*Margen automatico a la izquierda y a la derecha*/
+
+    width: min(100% - 3rem, 76rem)
+
+
+}
+
+.footer-info {
+    display: flex; /*Cada elemento uno al lado del otro*/
+    gap: 4rem; /*Separación entre cada div de info*/
+
+    /*Distrubimos las columnas de manera en 100% de la página*/
+    width: 100%;
+    justify-content: space-between;
+}
+
+
+.footer-info__contact {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.footer-info__contact span {
+    display: flex; /*alinea icono de telefono/correo al lado del texto*/
+    gap: 1rem; /*separación entre icono y texto*/
+}
+
+.footer-info__links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
